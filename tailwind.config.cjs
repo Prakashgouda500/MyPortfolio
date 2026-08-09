@@ -5,32 +5,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#050816',
-        secondary: '#aaa6c3',
-        tertiary: '#151030',
-        'black-100': '#100d25',
-        'black-200': '#090325',
-        'white-100': '#f3f3f3',
+        primary: '#09090b',       // Sleek near-black
+        secondary: '#a1a1aa',     // Zinc secondary
+        tertiary: '#18181b',      // Zinc-900 tertiary card bg
+        'black-100': '#121214',
+        'black-200': '#0f0f11',
+        'white-100': '#f4f4f5',
         flashWhite: '#f4f4f6',
-        platinum: '#e6e6e9',
-        platinumLight: '#f4f4f5',
+        platinum: '#e4e4e7',
+        platinumLight: '#fafafa',
         timberWolf: '#d4d4d8',
-        taupe: '#9999a1',
-        silver: '#d6d6d6',
-        dim: '#66666e',
-        battleGray: '#858585',
-        french: '#b5b5ba',
-        night: '#141414',
-        jet: '#292929',
-        jetLight: '#333333',
-        jetGray: '#6d6d74',
-        richBlack: '#2e2e2e',
-        eerieBlack: '#1f1f1f',
-        onyx: '#5b5b5b',
+        taupe: '#71717a',
+        silver: '#d4d4d8',
+        dim: '#3f3f46',
+        battleGray: '#52525b',
+        french: '#a1a1aa',
+        night: '#09090b',
+        jet: '#18181b',
+        jetLight: '#27272a',
+        jetGray: '#52525b',
+        richBlack: '#09090b',
+        eerieBlack: '#121214',
+        onyx: '#27272a',
+        accentCyan: '#06b6d4',    // Electric cyan for AI links/highlights
+        accentIndigo: '#6366f1',  // Tech purple-blue
       },
       boxShadow: {
-        card: '0px 35px 120px -15px #1f1f1f',
-        cardLight: '0px 19px 38px #eaeaec, 0px 15px 12px #eaeaec',
+        card: '0px 10px 40px -10px rgba(0, 0, 0, 0.7)',
+        cardLight: '0px 4px 20px 0px rgba(6, 182, 212, 0.15)', // Neon accent glow
+        glow: '0px 0px 15px 2px rgba(99, 102, 241, 0.3)',
       },
       screens: {
         xs: '450px',
@@ -43,16 +46,12 @@ export default {
         '3xl': '1800px',
       },
       backgroundImage: {
-        about:
-          'linear-gradient(165deg, rgba(244,244,246,1) 100%, rgba(122,122,122,1) 100%)',
-        experience:
-          "linear-gradient(135deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.2) 100%),url('/src/assets/backgrounds/white-abstract.png')",
-        experienceLight:
-          'linear-gradient(137deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.9) 60%)',
-        hero: 'linear-gradient(135deg, rgba(244,244,246,0.8) 60%, rgba(10,10,10,0.95) 60%)',
-        'hero-mobile':
-          'linear-gradient(137deg, rgba(244,244,246,0.8) 60%, rgba(10,10,10,1) 60%)',
-        tech: "linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url('/src/assets/backgrounds/nairobi.png')",
+        about: 'linear-gradient(180deg, #09090b 0%, #121214 100%)',
+        experience: 'linear-gradient(180deg, #121214 0%, #09090b 100%)',
+        experienceLight: 'linear-gradient(180deg, #18181b 0%, #09090b 100%)',
+        hero: 'linear-gradient(180deg, #09090b 0%, #121214 100%)',
+        'hero-mobile': 'linear-gradient(180deg, #09090b 0%, #121214 100%)',
+        tech: 'linear-gradient(180deg, #121214 0%, #18181b 100%)',
       },
       fontFamily: {
         arenq: ['Arenq'],

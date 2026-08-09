@@ -1,100 +1,97 @@
-# Portfolio Template
+# Prakash Gouda | Developer & AI Portfolio
 
-https://github.com/shaqdeff/Portfolio-Template/assets/92020713/eed76a82-e59d-440b-a04c-a2dc00a508b7
+A modern, premium, highly responsive personal developer portfolio website designed for **Prakash Gouda**, a Full Stack Developer and AI Enthusiast. This website is built using **React**, **Three.js (React Three Fiber)**, **Framer Motion**, and **TailwindCSS**.
 
-![portfolio-phone](https://github.com/shaqdeff/Portfolio-Template/assets/92020713/e41ed31c-50e5-40d3-a74f-9c0eb053fe7f)
-![portfolio-phone-3](https://github.com/shaqdeff/Portfolio-Template/assets/92020713/e8c23aa7-ac27-48fc-bf66-50ab00e3a64f)
+It features immersive 3D programmatic visual elements (an interactive data network in the hero section and a floating starfield network in the AI section), smooth scrolling, custom glassmorphism panels, and a polished developer-focused dark-mode theme.
 
-I created this portfolio to use as my own but ended up doing something else entirely. However, instead of keeping it buried, I decided to put it up here on GitHub as an open-source resource to help individuals to learn, adapt, and create their own portfolios. Feel free to customize and modify the theme and components to suit your personal style and branding preferences.
+---
 
-## License and Attribution
+## 🚀 Live Demo & Repository
+*   **Live Link:** [https://YOUR_RUBIE_TRENDS_LIVE_URL](https://YOUR_RUBIE_TRENDS_LIVE_URL) *(Staging / Deployment Link)*
+*   **Source Code:** [https://github.com/Prakashgouda500/prakash-portfolio](https://github.com/Prakashgouda500/prakash-portfolio)
 
-The code in this repository is released under the [MIT](https://github.com/shaqdeff/Portfolio-Template/blob/90213d4887074d1d29434f706afad3d12fa33f5f/MIT.md) License, which grants you the freedom to use, modify, and distribute the template as your own. However, if you choose to use the site's design largely unmodified, kindly credit me as the original designer of the site.
+---
 
-All projects and experiences included in this portfolio are the result of my own efforts and creativity. Please refrain from presenting them as your own.
+## ⚡ Key Features
+*   **Sleek Dark Modern Aesthetic:** A premium dark design built using curated zinc grays, electric cyan, and deep indigo glow filters.
+*   **Programmatic 3D Canvases:**
+    *   **Hero Section:** A custom rotating, interactive 3D Holographic Network sphere that scales dynamically on different screen dimensions.
+    *   **Building with AI Section:** An animated 3D Starfield Neural Network storm that supports drag-to-orbit controls.
+*   **Mobile-First Performance Optimizations:**
+    *   WebGL canvases automatically reduce complexity or switch to high-quality flat SVG cards on mobile views and devices that prefer reduced motion.
+    *   Optimized asset loading to minimize layout shifts.
+*   **Dynamic Data Layering:** All project entries, certifications, experience timelines, and skill lists are separated into independent configuration data files for painless upkeep.
+*   **Responsive Timelines & Cards:** Vertical work timeline (Ahana Info Tech Pvt. Ltd.) and expandible interactive project showcases with Hover-Tilt effects.
+*   **Optional GitHub Profile Integration:** Integrates dynamically with the GitHub REST API to fetch live repo counts and followers, with robust local fallback.
+*   **Secure Contacts & Validations:** Interactive form validation for name, email, and message entries with custom floating alert toasts. Fully configured to support secure environment variables for third-party endpoints (like EmailJS).
 
-## Built With
+---
 
-- React.js
-- Three.js
-- Framer Motion
-- TailwindCSS
+## 🛠️ Tech Stack
+*   **Frontend Library:** React.js (v18)
+*   **Styling Engine:** TailwindCSS (JIT mode) & Vanilla CSS
+*   **3D Graphics:** Three.js, React Three Fiber (`@react-three/fiber`), React Three Drei (`@react-three/drei`)
+*   **Animations:** Framer Motion
+*   **Icons & Interactive Elements:** Custom Inline SVGs & React Vertical Timeline
 
-## Live Demo
+---
 
-- Click [here](https://shaq-portfolio.netlify.app/) to view the live demo.
-
-## Getting Started
-
-To get started with this portfolio template, follow these simple steps:
+## 📦 Getting Started & Installation
 
 ### Prerequisites
+*   **Node.js:** v16.0.0+
+*   **npm:** v9.0.0+
 
-Make sure you have node `16.0.0` or higher and npm `9.0.0` or higher installed.
+### Installation Steps
 
-### Setup
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Prakashgouda500/prakash-portfolio.git
+    cd prakash-portfolio
+    ```
 
-- With git, clone the code to your machine, or download a ZIP of all the files directly.
-- [Download the ZIP file from this location](https://github.com/shaqdeff/Portfolio-Template/archive/refs/heads/main.zip) or run the following [git](https://git-scm.com/) command to clone the files to your machine:
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-```
-git clone https://github.com/shaqdeff/Portfolio-Template.git
-```
+3.  **Setup Environment Variables (Optional):**
+    Create a `.env` file in the root directory and add your EmailJS keys if you wish to enable the contact form email deliveries:
+    ```env
+    VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+    VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+    VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+    ```
 
-- Once the files are on your machine, open the **Portfolio-Template** folder in [Visual Studio Code](https://code.visualstudio.com/download).
+4.  **Run Development Server:**
+    ```bash
+    npm run dev
+    ```
+    Open `http://localhost:5173` in your browser.
 
-```
-cd Portfolio-Template && code .
-```
+5.  **Build for Production:**
+    ```bash
+    npm run build
+    ```
 
-## Install
+---
 
-- After opening the files in Visual Studio Code, open the **VS Code** integrated terminal and run the following commands:
+## 💡 Accessibility & Motion Support
+This portfolio actively honors OS-level user accessibility controls. If a visitor has **prefers-reduced-motion** enabled:
+*   The 3D canvases pause rotating.
+*   Framer Motion transition durations are minimized.
+*   CSS scrolling animations freeze.
 
-```
-npm install
-```
+---
 
-This will install all the packages and dependencies used in the project.
+## 👨‍💻 Author
+*   **Name:** Prakash Gouda
+*   **Title:** Full Stack Developer | AI Enthusiast
+*   **GitHub:** [@Prakashgouda500](https://github.com/Prakashgouda500)
+*   **LinkedIn:** [in/prakashgouda500](https://linkedin.com/in/prakashgouda500)
 
-## Usage
+---
 
-- Run the following command to start a local server:
-
-```
-npm run dev
-```
-
-This will open up the project on a browser on `http://localhost:5173/`
-
-## Build
-
-- To create a production build:
-
-```
-npm run build
-```
-
-- To preview the site as it will appear once deployed:
-
-```
-npm run preview
-```
-
-## Authors
-
-👤 **Shaquille Ndunda**
-
-- GitHub: [@shaqdeff](https://github.com/shaqdeff)
-- Twitter: [@shaquillendunda](https://twitter.com/shaquillendunda)
-- LinkedIn: [Shaquille Ndunda](https://www.linkedin.com/in/shaquille-ndunda-b13a95107/)
-
-## Feedback and Contributions
-
-If you have any feedback, suggestions, or would like to contribute to this project, your involvement is highly valued. Feel free to open an [issue](../../issues/) or submit a pull request with your ideas and enhancements. Remember, this template is a starting point, and the true magic lies in making it your own. Enjoy the journey of creating a stunning portfolio that represents your unique talents and accomplishments!
-
-Happy coding and showcasing!
-
-## Show your support
-
-Give a ⭐️ if you like this project!
+## ⚖️ Credits & License
+This project is licensed under the **MIT License**.
+*   **Inspiration template:** This portfolio takes design, canvas, and layout structure inspiration from the open-source [Shaqdeff Portfolio Template](https://github.com/shaqdeff/Portfolio-Template).

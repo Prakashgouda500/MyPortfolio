@@ -2,96 +2,99 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { close, menu, logo, logotext } from '../assets';
+import { close, menu } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-2 fixed 
-      top-0 z-20 bg-flashWhite sm:opacity-[0.97] xxs:h-[12vh]`}>
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-300 ${
+        scrolled ? 'glassmorphism border-b border-zinc-800' : 'bg-transparent'
+      }`}
+    >
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto font-poppins">
+        {/* PG Custom SVG Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-3 cursor-pointer"
           onClick={() => {
             setActive('');
             window.scrollTo(0, 0);
-          }}>
-          <img
-            src={logo} // your logo comes here
-            alt="logo"
-            className="sm:w-[50px] sm:h-[50px] w-[45px] h-[45px] object-contain"
-          />
-
-          {/* if you have text you want besides your logo it comes here.
-          Otherwise delete this if you don't need it. */}
-          <img
-            src={logotext}
-            alt="logo"
-            className="sm:w-[90px] sm:h-[90px] w-[85px] h-[85px] -ml-[0.6rem] object-contain"
-          />
+          }}
+        >
+          <div className="relative w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-br from-accentCyan to-accentIndigo shadow-glow">
+            <span className="text-white font-bold text-lg tracking-wider font-mova">PG</span>
+          </div>
+          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+            Prakash Gouda &nbsp;
+            <span className="sm:block hidden text-accentCyan">| Dev & AI</span>
+          </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">
+
+        {/* Desktop nav links */}
+        <ul className="list-none hidden md:flex flex-row gap-8 items-center">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? 'text-french' : 'text-eerieBlack'
-              } hover:text-taupe text-[21px] font-medium font-mova 
-                uppercase tracking-[3px] cursor-pointer nav-links`}
-              onClick={() => setActive(nav.title)}>
+                active === nav.title ? 'text-accentCyan' : 'text-zinc-400'
+              } hover:text-white text-[15px] font-semibold tracking-wider cursor-pointer transition-colors duration-200 uppercase`}
+              onClick={() => setActive(nav.title)}
+            >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
 
-        {/* mobile */}
-        <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
-          {toggle ? (
-            <div
-              className={`p-6 bg-flashWhite opacity-[0.98] absolute 
-                top-0 left-0 w-screen h-[100vh] z-10 menu ${
-                  toggle ? 'menu-open' : 'menu-close'
-                }`}>
-              <div className="flex justify-end">
-                <img
-                  src={close}
-                  alt="close"
-                  className="w-[22px] h-[22px] object-contain cursor-pointer"
-                  onClick={() => setToggle(!toggle)}
-                />
-              </div>
-              <ul
-                className="list-none flex flex-col -gap-[1rem] 
-                items-start justify-end mt-[10rem] -ml-[35px]">
-                {navLinks.map((nav) => (
-                  <li
-                    id={nav.id}
-                    key={nav.id}
-                    className={`${
-                      active === nav.title ? 'text-french' : 'text-eerieBlack'
-                    } text-[88px] font-bold font-arenq 
-                      uppercase tracking-[1px] cursor-pointer`}
-                    onClick={() => {
-                      setToggle(!toggle);
-                      setActive(nav.title);
-                    }}>
-                    <a href={`#${nav.id}`}>{nav.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <img
-              src={menu}
-              alt="menu"
-              className="w-[34px] h-[34px] object-contain cursor-pointer"
-              onClick={() => setToggle(!toggle)}
-            />
-          )}
+        {/* Mobile menu trigger */}
+        <div className="md:hidden flex flex-1 justify-end items-center">
+          <img
+            src={toggle ? close : menu}
+            alt="menu"
+            className="w-[28px] h-[28px] object-contain cursor-pointer filter invert brightness-200"
+            onClick={() => setToggle(!toggle)}
+          />
+
+          {/* Mobile dropdown */}
+          <div
+            className={`${
+              !toggle ? 'hidden' : 'flex'
+            } p-8 bg-zinc-950/95 border-l border-zinc-800 absolute top-20 right-0 mx-4 my-2 min-w-[200px] z-10 rounded-xl glassmorphism flex-col gap-4 shadow-2xl animate-fade-in`}
+          >
+            <ul className="list-none flex flex-col gap-4 items-start">
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`${
+                    active === nav.title ? 'text-accentCyan' : 'text-zinc-300'
+                  } text-[16px] font-medium tracking-wide uppercase cursor-pointer hover:text-white transition-colors`}
+                  onClick={() => {
+                    setToggle(false);
+                    setActive(nav.title);
+                  }}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
