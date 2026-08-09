@@ -1,14 +1,9 @@
-# Prakash Gouda | Developer & AI Portfolio
+# Prakash Gouda | Developer
 
-A modern, premium, highly responsive personal developer portfolio website designed for **Prakash Gouda**, a Full Stack Developer and AI Enthusiast. This website is built using **React**, **Three.js (React Three Fiber)**, **Framer Motion**, and **TailwindCSS**.
+A modern, premium, highly responsive personal developer portfolio website designed by **Prakash Gouda**, a Full Stack Developer and AI Enthusiast. This website is built using **React**, **Three.js (React Three Fiber)**, **Framer Motion**, and **TailwindCSS**.
 
 It features immersive 3D programmatic visual elements (an interactive data network in the hero section and a floating starfield network in the AI section), smooth scrolling, custom glassmorphism panels, and a polished developer-focused dark-mode theme.
 
----
-
-## 🚀 Live Demo & Repository
-*   **Live Link:** [https://YOUR_RUBIE_TRENDS_LIVE_URL](https://YOUR_RUBIE_TRENDS_LIVE_URL) *(Staging / Deployment Link)*
-*   **Source Code:** [https://github.com/Prakashgouda500/prakash-portfolio](https://github.com/Prakashgouda500/prakash-portfolio)
 
 ---
 
