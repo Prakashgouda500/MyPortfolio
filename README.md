@@ -41,7 +41,7 @@ It features immersive 3D programmatic visual elements (an interactive data netwo
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/Prakashgouda500/prakash-portfolio.git
+    git clone https://github.com/Prakashgouda500/MyPortfolio.git
     cd prakash-portfolio
     ```
 
