@@ -31,32 +31,40 @@ const HighlightCard = ({ index, title, description, icon }) => {
 const About = () => {
   const highlights = [
     {
-      title: 'Full Stack Dev',
-      description: 'Building responsive frontends and secure, robust RESTful backend architectures.',
+      title: 'Full-Stack Software Dev',
+      description: 'Hands-on experience in Java, Python, JavaScript, React.js, Node.js, and Express.js.',
       icon: frontend,
     },
     {
-      title: 'AI Enthusiast',
-      description: 'Exploring LLM APIs, intelligent systems, prompt engineering, and smart automation.',
+      title: 'UI/UX & Web Design',
+      description: 'Solid grounding in HTML5, CSS3, Figma wireframing, and responsive web design principles.',
       icon: backend,
     },
     {
-      title: 'Problem Solver',
-      description: 'Creating scalable database schema designs and handling complex app logic.',
+      title: 'Databases & SDLC',
+      description: 'Fundamentals across SQL and MongoDB, OOP, data structures, and SDLC debugging.',
       icon: prototyping,
     },
     {
-      title: 'Agile Learner',
-      description: 'Continuously adopting modern frameworks, API practices, and developer tools.',
+      title: 'AI & Continuous Dev',
+      description: 'Eager to build intelligent software solutions and continuously grow technical expertise.',
       icon: ux,
     },
   ];
 
-  const stats = [
-    { value: '4+', label: 'Projects Built' },
-    { value: '15+', label: 'Technologies Learned' },
-    { value: '3+', label: 'Certifications' },
-    { value: '24/7', label: 'Learning & Dev' },
+  const education = [
+    {
+      degree: 'Bachelor of Computer Applications (BCA)',
+      institution: 'GFGC Kuvempu University, Sagara, Karnataka, India',
+      duration: 'Aug 2023 – Jun 2026',
+      detail: 'Computer Science • CGPA: 8.28',
+    },
+    {
+      degree: 'Pre-University Course (PUC)',
+      institution: 'SMGPUC, Sirsi, Karnataka, India',
+      duration: 'Mar 2021 – Mar 2023',
+      detail: 'Percentage: 76.77% • Coursework: Java, Python, OOP, Data Structures, DBMS (SQL), Web Development',
+    },
   ];
 
   return (
@@ -67,42 +75,48 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>About Me.</h2>
       </motion.div>
 
-      {/* Biography */}
+      {/* Summary */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-4">
         <motion.div
           variants={fadeIn('', '', 0.1, 1)}
-          className="flex-1 text-zinc-300 text-[16px] md:text-[18px] leading-[30px]"
+          className="flex-1 text-zinc-300 text-[16px] md:text-[18px] leading-[30px] font-poppins"
         >
           <p>
-            I'm a motivated Full Stack Developer with a strong curiosity for Artificial Intelligence and modern web development architectures. I love transforming creative concepts into clean, accessible, and high-performance applications that offer a stellar user experience.
+            Junior software developer with hands-on experience in Java and Python programming, and front-end and back-end web development using JavaScript, React.js, Node.js, and Express.js.
           </p>
           <p className="mt-4">
-            With experience spanning across frontend (React, Tailwind) and backend technologies (Node.js, Express, C# .NET, databases like MySQL and MongoDB), I enjoy designing complete software pipelines. My focus is on writing structured code, exploring API capabilities, and integrating automation systems that optimize user and developer workflows alike.
+            Solid grounding in HTML, CSS, and database fundamentals across SQL and MongoDB, with skills in version control (Git, GitHub) and UI/UX design principles. Comfortable working across the software development lifecycle (SDLC) from design to implementation, with strong problem-solving skills and a focus on writing clean, maintainable code. Completed a BCA in Computer Science; eager to contribute to a full-stack software development role and grow technical expertise.
           </p>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Education Panel */}
         <motion.div
           variants={fadeIn('left', 'tween', 0.2, 0.75)}
-          className="w-full lg:w-1/3 grid grid-cols-2 gap-4"
+          className="w-full lg:w-1/2 flex flex-col gap-4"
         >
-          {stats.map((stat, idx) => (
+          <h3 className="text-white font-bold text-xl font-poppins flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-accentCyan" />
+            Education
+          </h3>
+          {education.map((edu, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 flex flex-col justify-center items-center text-center shadow-lg"
+              className="p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800 flex flex-col justify-center shadow-lg"
             >
-              <span className="text-[28px] md:text-[34px] font-black text-accentCyan font-mova">
-                {stat.value}
-              </span>
-              <span className="text-[12px] md:text-[14px] text-zinc-400 font-medium font-poppins mt-1">
-                {stat.label}
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <h4 className="text-white text-[16px] font-bold font-poppins">{edu.degree}</h4>
+                <span className="text-accentCyan text-xs font-semibold">{edu.duration}</span>
+              </div>
+              <p className="text-zinc-400 text-xs mt-1 font-poppins">{edu.institution}</p>
+              <span className="text-zinc-500 text-xs mt-2 font-medium bg-zinc-950 px-2.5 py-1 rounded-md border border-zinc-800 w-fit">
+                {edu.detail}
               </span>
             </div>
           ))}
         </motion.div>
       </div>
 
-      {/* Highlights Grid */}
+      {/* Capability Highlights Grid */}
       <div className="mt-16 flex flex-wrap gap-8 justify-center">
         {highlights.map((highlight, index) => (
           <HighlightCard key={highlight.title} index={index} {...highlight} />
