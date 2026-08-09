@@ -92,7 +92,7 @@ const Hero = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/prakashgouda500" 
+              href="https://www.linkedin.com/in/prakash-gouda-227347217" 
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accentCyan transition-colors duration-200"

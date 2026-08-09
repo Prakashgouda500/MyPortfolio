@@ -88,7 +88,7 @@ This portfolio actively honors OS-level user accessibility controls. If a visito
 *   **Name:** Prakash Gouda
 *   **Title:** Full Stack Developer | AI Enthusiast
 *   **GitHub:** [@Prakashgouda500](https://github.com/Prakashgouda500)
-*   **LinkedIn:** [in/prakashgouda500](https://linkedin.com/in/prakashgouda500)
+*   **LinkedIn:** [in/prakash-gouda-227347217](https://www.linkedin.com/in/prakash-gouda-227347217)
 
 ---
 
